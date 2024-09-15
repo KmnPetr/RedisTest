@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  redis:
+    container_name: redis
+    image: redis:7.4.0-alpine3.20
+    ports:
+      - '6379:6379'
+    command: redis-server --save "" --appendonly no
+#    volumes:
+#      - redis-data:/data
+#    labels:
+#      org.springframework.boot.service-connection: redis
+#volumes:
+#  redis-data:
+#    driver: local
